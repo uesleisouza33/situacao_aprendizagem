@@ -1,73 +1,106 @@
-# React + TypeScript + Vite
+# 💻 Projeto: Carvalho Software
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📘 Descrição
+Este projeto foi desenvolvido como parte da **Situação de Aprendizagem do 2º ano do curso técnico integrado com o Ensino Médio**
 
-Currently, two official plugins are available:
+O site apresenta as principais áreas de atuação da empresa, com páginas dedicadas a:
+- Serviços oferecidos;
+- Algoritmos e lógica computacional;
+- Componentes eletrônicos;
+- Banco de dados;
+- Linguagens de programação e conceitos de computação.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O foco do projeto é aplicar conhecimentos de **desenvolvimento web moderno**, criando um site que mostra um resumo de tudo aprendido ao longo do ano.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 Objetivos de Aprendizagem
+- Compreender o processo de **criação e publicação de um site**;
+- Desenvolver habilidades em **HTML, CSS, JavaScript**;
+- Aplicar conceitos de **responsividade e usabilidade**;
+- Trabalhar com **componentização** e **rotas** no React;
+- Integrar conteúdos de diferentes disciplinas do curso técnico.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🛠️ Tecnologias Utilizadas
+- ⚛️ **React** – biblioteca JavaScript para construção da interface;
+- 🎨 **Tailwind CSS** – framework de CSS utilitário para estilização;
+- 🌐 **Vite** – ferramenta de build e desenvolvimento rápido;
+- ☁️ **Vercel** – plataforma de hospedagem para deploy do site;
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Como Executar o Projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔹 Clonar o repositório
+```bash
+git clone https://github.com/uesleisouza33/situacao_aprendizagem
+cd situacao_aprendizagem
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 🔹 Instalar dependências
+```bash
+npm install
 ```
+
+### 🔹 Executar em ambiente de desenvolvimento
+```bash
+npm run dev
+```
+O projeto será iniciado em: [http://localhost:5173](http://localhost:5173)
+
+### 🔹 Gerar versão de produção
+```bash
+npm run build
+```
+
+### 🔹 Pré-visualizar o build
+```bash
+npm run preview
+```
+
+---
+
+## 🌍 Deploy
+O site foi publicado utilizando a plataforma **[Vercel](https://vercel.com)**.  
+Acesse o projeto online em:  
+👉 [https://carvalhosoftware.vercel.app/](https://carvalhosoftware.vercel.app/)
+
+---
+
+## 🧩 Estrutura do Projeto
+```
+📦 src
+ ┣ 📂assets           # Imagens, ícones e outros arquivos estáticos
+ ┣ 📂components       # Componentes reutilizáveis
+ ┣ 📂pages            # Páginas principais do site
+ ┣ 📂routes           # Configuração das rotas
+ ┣ 📜App.jsx          # Estrutura principal da aplicação
+ ┣ 📜Index.css        # Arquivo onde tailwindcss é compilado
+ ┗ 📜main.jsx         # Ponto de entrada
+```
+
+---
+
+## 🎯 Aprendizados
+Durante o desenvolvimento deste projeto, foram explorados conceitos de:
+- Organização de pastas e componentes no React;
+- Uso de **props**;
+- Aplicação de **Tailwind CSS** para layouts responsivos;
+- Gerenciamento de rotas com `react-router-dom`;
+- Deploy automatizado com GitHub + Vercel.
+
+---
+
+## 👨‍💻 Autores
+Projeto desenvolvido por: **Ueslei Souza de Carvalho Filho**  
+Orientação: *[Carlos Roberto da Silva Filho]*  
+Instituição: *[Escola Sesi - Tijucas, SC]*  
+Ano letivo: **2025**
+
+---
+
+## 📜 Licença
+Este projeto é de uso educacional. 
+Sinta-se à vontade para utilizar o código como base de aprendizado.
