@@ -4,7 +4,7 @@ import {
   faCode,
   faBrain,
 } from "@fortawesome/free-solid-svg-icons";
-import fluxogram from '../assets/fluxgram_example.jpg'
+import fluxogram from '../assets/fluxogram.jpg'
 
 export default function Algorithms() {
   return (
