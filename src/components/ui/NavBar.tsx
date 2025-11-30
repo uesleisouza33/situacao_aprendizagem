@@ -26,7 +26,7 @@ export default function NavBar() {
             Serviços
           </Link>
           <Link to="/algorithms" className="hover:text-slate-900">
-            Algoritmos
+            Algoritmos/Log. Computacional
           </Link>
           <Link to="/electronics" className="hover:text-slate-900">
             Eletrônica
@@ -36,6 +36,9 @@ export default function NavBar() {
           </Link>
           <Link to="/networking" className="hover:text-slate-900">
             Redes
+          </Link>
+          <Link to="/itbasics" hover:text-slate-900>
+            Tec. da Informação
           </Link>
           <Link to="/contact" className="text-indigo-600 font-medium">
             Contato
@@ -92,6 +95,9 @@ export default function NavBar() {
             <Link to="/networking" onClick={() => setOpen(false)}>
               Redes
             </Link>
+            <Link to="/itbasics" hover:text-slate-900>
+            Tec. da Informação
+          </Link>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}

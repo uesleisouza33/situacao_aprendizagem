@@ -6,6 +6,7 @@ import Electronics from "../pages/Electronics";
 import Databases from "../pages/Databases";
 import Networking from "../pages/Networking";
 import Contact from "../pages/Contact";
+import ITBasic from "../pages/ITBasic";
 
 export default function AppRouter(){
   return (
@@ -16,6 +17,7 @@ export default function AppRouter(){
       <Route path="/electronics" element={<Electronics />} />
       <Route path="/databases" element={<Databases />} />
       <Route path="/networking" element={<Networking />} />
+      <Route path="/itbasics" element={<ITBasic/>}></Route>
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

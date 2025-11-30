@@ -141,6 +141,89 @@ funcao inicio(){
 ${"}"}`}</pre>
         </div>
       </section>
+
+      <aside className="space-y-6 mt-4">
+      <article className="mb-6 bg-white border rounded-lg p-6 shadow-sm">
+        <h2 className="text-2xl font-semibold text-slate-800 mb-4">Lógica Computacional — Introdução</h2>
+        <p className="text-slate-600 mb-3">
+          Lógica computacional estuda como representar e manipular informação através de proposições e operadores lógicos.
+          É a base para tomar decisões em programas e construir algoritmos corretos.
+        </p>
+
+        <h3 className="font-semibold mt-3">Proposição</h3>
+        <p className="text-slate-600">
+          Uma proposição é uma frase que pode ser verdadeira (V) ou falsa (F). Ex.: <em>"Hoje chove"</em>.
+        </p>
+
+        <h3 className="font-semibold mt-3">Operadores lógicos</h3>
+        <ul className="list-disc pl-6 text-slate-700 space-y-2">
+          <li><strong>AND (E):</strong> verdadeiro se ambas proposições forem verdadeiras.</li>
+          <li><strong>OR (OU):</strong> verdadeiro se pelo menos uma for verdadeira.</li>
+          <li><strong>NOT (NÃO):</strong> inverte o valor lógico.</li>
+        </ul>
+      </article>
+
+      <article className="mb-6 bg-white border rounded-lg p-6 shadow-sm">
+        <h3 className="text-lg font-semibold mb-3">Tabelas-verdade (exemplos)</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="text-left">
+                <th className="border px-2 py-1">A</th>
+                <th className="border px-2 py-1">B</th>
+                <th className="border px-2 py-1">A AND B</th>
+                <th className="border px-2 py-1">A OR B</th>
+                <th className="border px-2 py-1">NOT A</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">F</td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">F</td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">V</td>
+                <td className="border px-2 py-1">V</td>
+              </tr>
+              <tr>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">F</td>
+                <td className="border px-2 py-1">V</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article className="mb-6 bg-white border rounded-lg p-6 shadow-sm">
+        <h3 className="text-lg font-semibold mb-3">Conectando lógica e programação</h3>
+        <p className="text-slate-600 mb-3">
+          Em Portugol e em linguagens reais usamos operadores lógicos para condicionar execuções. Exemplo:
+        </p>
+        <div className="bg-slate-50 p-3 rounded text-sm">
+          <pre>{`se (idade >= 18) e (temRG) entao
+  escreva("Pode votar")
+senao
+  escreva("Não pode votar")
+fimse`}</pre>
+        </div>
+      </article>
+    </aside>
     </main>
   );
 }
