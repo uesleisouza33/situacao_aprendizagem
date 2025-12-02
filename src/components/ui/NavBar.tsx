@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logo.png'
+import logo from "../../assets/logo.png";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -40,12 +40,14 @@ export default function NavBar() {
           <Link to="/itbasics" hover:text-slate-900>
             Tec. da Informação
           </Link>
+          <Link to="/prog" className="hover:text-slate-900">
+            Logíca Prog.
+          </Link>
           <Link to="/contact" className="text-indigo-600 font-medium">
             Contato
           </Link>
         </nav>
 
-        {/* Botão mobile */}
         <button
           className="md:hidden p-2"
           onClick={() => setOpen(!open)}
@@ -95,9 +97,12 @@ export default function NavBar() {
             <Link to="/networking" onClick={() => setOpen(false)}>
               Redes
             </Link>
+            <Link to="/prog" className="hover:text-slate-900">
+              Logíca Prog.
+            </Link>
             <Link to="/itbasics" hover:text-slate-900>
-            Tec. da Informação
-          </Link>
+              Tec. da Informação
+            </Link>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}

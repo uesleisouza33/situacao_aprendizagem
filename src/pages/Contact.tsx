@@ -1,32 +1,97 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [msg, setMsg] = useState("");
-  const [sent, setSent] = useState(false);
+  // coloque seus dados reais depois
+  const EMAIL = "ueslei_carvalho-f@estudante.sesisenai.org.br";
+  const GITHUB = "https://github.com/uesleisouza33";
+  const PHONE = "+5548991736379";
+  const ADDRESS = "Av. José Manoel Reis, S/N - Centro, Tijucas - SC, 88200-000";
+  const WHATSAPP_NUMBER = "5548991736379";
 
-  const submit = () => {
-    if (!name || !msg) return alert("Preencha tudo");
-    const store = JSON.parse(localStorage.getItem("contact_msgs")||"[]");
-    store.push({name, msg, at: new Date().toISOString()});
-    localStorage.setItem("contact_msgs", JSON.stringify(store));
-    setSent(true);
-    setName(""); setMsg("");
-    setTimeout(()=>setSent(false),3000);
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
+    } catch {
+      // fallback simples
+      alert("Não foi possível copiar automaticamente. Email: " + EMAIL);
+    }
+  };
+
+  const openMail = () => {
+    const subject = encodeURIComponent("Contato pelo site");
+    const body = encodeURIComponent("Olá,\n\nEscreva sua mensagem aqui...\n");
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+  };
+
+  const openWhatsApp = () => {
+    const text = encodeURIComponent("Olá! Vi seu contato no site e gostaria de conversar.");
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
   };
 
   return (
     <main className="max-w-2xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-3">Contato</h1>
-      <p className="text-slate-600 mb-6">Envie uma mensagem — este formulário é simulado e salva localmente no navegador.</p>
+      <h1 className="text-3xl font-bold mb-2">Contato - Carvalho Software</h1>
 
-      <div className="bg-white p-4 rounded-lg border">
-        <input value={name} onChange={e=>setName(e.target.value)} placeholder="Nome" className="w-full p-2 border rounded mb-3" />
-        <textarea value={msg} onChange={e=>setMsg(e.target.value)} placeholder="Mensagem" className="w-full p-2 border rounded mb-3" rows={5} />
-        <div className="flex gap-2">
-          <button onClick={submit} className="px-4 py-2 bg-indigo-600 text-white rounded">Enviar</button>
+      <div className="bg-white p-6 rounded-lg border shadow-sm space-y-4">
+        <div>
+          <h2 className="text-lg font-semibold">Email</h2>
+          <p className="text-sm text-slate-700">Use para assuntos formais, envio de arquivos ou comunicação oficial.</p>
+
+          <div className="mt-3 flex items-center gap-3">
+            <div className="text-sm text-slate-800">{EMAIL}</div>
+
+            <button
+              onClick={copyEmail}
+              className="px-3 py-1 border rounded text-sm hover:bg-slate-50"
+              aria-label="Copiar e-mail"
+            >
+              {copied ? "Copiado ✓" : "Copiar e-mail"}
+            </button>
+
+            <button
+              onClick={openMail}
+              className="px-3 py-1 bg-indigo-600 text-white rounded text-sm"
+            >
+              Abrir e-mail
+            </button>
+          </div>
         </div>
-        {sent && <div className="mt-3 text-green-600">Mensagem salva com sucesso (simulado)</div>}
+
+        <div>
+          <h2 className="text-lg font-semibold">WhatsApp</h2>
+          <p className="text-sm text-slate-700">Atendimento rápido (use para mensagens curtas).</p>
+          <div className="mt-3 flex items-center gap-3">
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noreferrer"
+              className="px-3 py-1 border rounded text-sm"
+            >
+              Abrir chat
+            </a>
+
+            <button onClick={openWhatsApp} className="px-3 py-1 bg-green-600 text-white rounded text-sm">
+              Mensagem padrão
+            </button>
+
+            <div className="text-sm text-slate-700 ml-auto">Tel: <a href={`tel:${PHONE}`} className="text-indigo-600">{PHONE}</a></div>
+          </div>
+        </div>
+
+        <div>
+          <h2 className="text-lg font-semibold">Outros links</h2>
+          <ul className="mt-2 text-sm space-y-1">
+            <li>
+              <strong>GitHub:</strong>{" "}
+              <a href={GITHUB} target="_blank" rel="noreferrer" className="text-indigo-600">{GITHUB.replace(/^https?:\/\//, "")}</a>
+            </li>
+            <li><strong>Endereço:</strong> <span className="text-slate-700">{ADDRESS}</span></li>
+          </ul>
+        </div>
       </div>
     </main>
   );
