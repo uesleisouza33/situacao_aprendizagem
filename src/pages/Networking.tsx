@@ -246,6 +246,22 @@ net.createServer(sock => {
 }).listen(5000);`}
         </pre>
       </section>
+
+
+      <section className="bg-white border rounded-lg p-6 shadow-sm">
+  <h2 className="text-2xl font-semibold mb-3">Video de exemplo sobre api rest com arduino</h2>
+
+  <div className="aspect-video w-full rounded-lg overflow-hidden shadow-sm">
+    <iframe
+      className="w-full h-full"
+      src="https://youtube.com/shorts/UxDpRLFOkhk"
+      title="Vídeo explicativo"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    ></iframe>
+  </div>
+</section>
     </main>
   );
 }
